@@ -1,15 +1,15 @@
 "use client";
 import { Popover } from "@headlessui/react";
 
-export function Popup({ children }: any) {
-  const Button = () => {
-    if (!children) return <Popover.Button>Solutions</Popover.Button>;
-    return <Popover.Overlay>{children}</Popover.Overlay>;
-  };
+function Button({ children }: any) {
+  if (!children) return <Popover.Button>Solutions</Popover.Button>;
+  return <Popover.Overlay>{children}</Popover.Overlay>;
+}
 
+export function Popup({ children }: any) {
   return (
     <Popover className="relative">
-      <Button />
+      <Button>{children}</Button>
 
       <Popover.Panel className="absolute z-10">
         <div className="grid grid-cols-2">
